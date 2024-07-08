@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sort array</title>
+</head>
+<body>
+    <script>
+        a = []
+        for(i=0; i<5; i++) {
+            a[i] = parseInt(prompt("Enter number"+i))
+        }
+        document.write("Unsorted : ")
+        for(i=0; i<a.length; i++) {
+            document.write(a[i]+" ")
+        }
+        temp = 0
+        for(i=0; i<a.length; i++) {
+            for(j=i+1; j<a.length; j++) {
+                if(a[i]>a[j]) {
+                    temp = a[j];
+                    a[j] = a[i];
+                    a[i] = temp; 
+                }
+            }
+        }
+        document.write("</br>Sorted : ")
+        for(i=0; i<a.length; i++) {
+            document.write(a[i]+" ")
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Retuen index of the word</title>
+</head>
+<body>
+    <script>
+        str = prompt("Enter string")
+        arr = []
+        arr = str.split(" ") 
+        check = prompt("Enter a work to check existance")
+        notExist = true;
+        for(i=0; i<arr.length; i++) {
+            if(arr[i]==check) {
+                document.write(check+" is at index "+i+" in sentence.")
+                notExist = false;
+                break;
+            }
+        }
+        if(notExist) {
+            document.write(check+" does not found in sentence.")
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Armstrong</title>
+</head>
+<body>
+    <script>
+        n = parseInt(prompt("Enter number"));
+        x=n; z=n; y=0;
+        len=n.toString().length;
+        while(z!=0){
+            y += Math.pow(z%10,len);
+            z = parseInt(z/10)
+        }
+        if(y==n)
+            document.write("Number is armstrong")
+        else
+            document.write("Number is not armstrong")
+    </script>
+</body>
+</html>

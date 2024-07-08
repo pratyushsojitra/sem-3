@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <link rel="stylesheet" href="Calculator.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            background-color: black;
+            color: white;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .button {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+            grid-gap: 8px;
+        }
+
+        button {
+            padding: 10px;
+            font-size: 30px;
+            background-color: #212121;
+            border-radius: 30px;
+            border: 1px solid #212121;
+        }
+
+        button:active {
+            background-color: #3b3a3a;
+            animation: button 0.4s;
+        }
+
+        .min {
+            padding: 0px;
+            font-size: 40px;
+        }
+
+        #g {
+            color: #00ff00;
+        }
+
+        #C {
+            color: #ff6666;
+        }
+
+        #equ {
+            background-color: #22cc22;
+        }
+
+        #equ:active {
+            animation: button 0.4s;
+            background-color: #0fe60f;
+        }
+
+        input {
+            padding: 12px 10px;
+            margin: 7px 0;
+            font-size: 25px;
+            width: 250px;
+            border: none;
+            color: white;
+            text-align: right;
+        }
+
+        @keyframes button {
+            from {
+                font-size: 30px;
+            }
+
+            to {
+                font-size: 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <input type="text" id="display" value="" />
+        <button id="backspace"
+            style="background: none; border: none; font-size: 20px; animation: none;padding-left : 220px"
+            onclick="backspace()">&#9003;</button>
+        <div class="button">
+            <button id="C" onclick="cls()">C</button>
+            <button id="g" onclick="addBrecket()">()</button>
+            <button id="g" onclick="add('%')">%</button>
+            <button id="g" onclick="add('/')">÷</button>
+
+            <button onclick="add('7')">7</button>
+            <button onclick="add('8')">8</button>
+            <button onclick="add('9')">9</button>
+            <button id="g" class="X" onclick="add('*')">x</button>
+
+            <button onclick="add('4')">4</button>
+            <button onclick="add('5')">5</button>
+            <button onclick="add('6')">6</button>
+            <button id="g" class="min" onclick="add('-')">-</button>
+
+            <button onclick="add('1')">1</button>
+            <button onclick="add('2')">2</button>
+            <button onclick="add('3')">3</button>
+            <button id="g" onclick="add('+')">+</button>
+
+            <button>+/-</button>
+            <button onclick="add('0')">0</button>
+            <button onclick="add('.')">.</button>
+            <button id="equ" onclick="equal()">=</button>
+        </div>
+    </div>
+    
+    <script>
+        clear = false
+        isBackspace = true
+        isBracketOn = true
+        function add(val) {
+            ans = document.getElementById('display')
+            if (clear) {
+                ans.value = ""
+                clear = false
+            }
+            ans.value += val
+            isBackspace = true
+        }
+        function equal() {
+            ans = document.getElementById('display')
+            disp = eval(ans.value)
+            ans.value = disp
+            clear = true
+            isBackspace = false
+        }
+        function cls() {
+            clr = document.getElementById('display')
+            clr.value = ""
+        }
+        function backspace() {
+            if (isBackspace) {
+                num = document.getElementById('display')
+                data = num.value
+                num.value = data.slice(0, -1);
+            }
+        }
+        function addBrecket() {
+            if (isBracketOn) {
+                add('(')
+                isBracketOn = false
+            }
+            else {
+                add(')')
+                isBracketOn = true
+            }
+        }
+    </script>
+</body>
+
+</html>

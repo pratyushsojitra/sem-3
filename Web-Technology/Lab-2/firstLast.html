@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Give string </title>
+</head>
+<body>
+    <script>
+        str = prompt("Enter string")
+        ch = prompt("Enter character")
+        first = str.indexOf(ch)
+        last = str.lastIndexOf(ch)
+        document.write("First index : "+first+"<br>Last index : "+last)
+        document.write("<br>String : "+str.substring(first+1,last))
+    </script>
+</body>
+</html>
