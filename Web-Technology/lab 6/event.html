@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body id="changecolour">
+    <button onclick="Touch()">click</button>
+    <button onfocus="doo()">focus</button>
+    <button onmouseover="mouseover()">mouseover</button>
+    <button onmouseout="out()">out</button>
+    <button onmouseleave="leave()">mouseleave</button>
+<script>
+    
+    function mouseover() {
+        document.getElementById("changecolour").style.backgroundColor="pink";
+    }
+    function out() {
+        document.getElementById("changecolour").style.backgroundColor="gray";
+    }
+    function leave() {
+        document.getElementById("changecolour").style.backgroundColor="green";
+    }
+    function Touch() {
+        document.getElementById("changecolour").style.backgroundColor="black";
+    }
+    function doo() {
+        document.getElementById("changecolour").style.backgroundColor="blue";
+    }
+    
+</script>
+</body>
+
+</html>

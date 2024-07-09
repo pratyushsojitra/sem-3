@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h4 id="Event">Mouse Event</h4>
+
+    <script type="text/javascript">
+        let h = document.getElementById('Event')
+        function click(name) {
+            h.innerText = 'mouse event' + name
+        }
+        document.addEventListener('click', function () { click('click'); })
+        document.addEventListener('dblclick', function () { click('double click'); })
+        document.addEventListener('mouseout', function () { click('mouseout'); })
+        document.addEventListener('keydown', function (N) { click(N.key); })
+    </script>
+</body>
+
+</html>
